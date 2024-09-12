@@ -5,8 +5,8 @@ import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   flexRender,
-  getCoreRowModel,
   useReactTable,
+  getCoreRowModel,
 } from "@tanstack/react-table";
 
 import { COLUMNS } from "@/utils/columns";
@@ -19,10 +19,11 @@ const Home = () => {
   });
 
   const columns = useMemo(() => COLUMNS, []);
+  const memoData = useMemo(() => data?.results, [data]);
 
   const table = useReactTable({
     columns,
-    data,
+    data: memoData,
     getCoreRowModel: getCoreRowModel(),
   });
 

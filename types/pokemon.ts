@@ -46,7 +46,7 @@ export interface IPokemonDetailResponse {
 export interface IPokemonListItem {
   id: number;
   name: string;
-  image: string;
+  sprite: string;
   types: string[];
 }
 

@@ -1,7 +1,7 @@
 import {
+  IPokemonListItem,
   IPaginatedPokemonList,
   IPokemonDetailResponse,
-  IPokemonListItem,
   IPokemonListResponseItem,
 } from "@/types/pokemon";
 
@@ -30,7 +30,7 @@ export async function getAllPokemonsPaginated(
       return {
         id: pokemonDetail.id,
         name: pokemonDetail.name,
-        image: pokemonDetail.sprites.front_default,
+        sprite: pokemonDetail.sprites.front_default,
         types: pokemonDetail.types.map((t) => t.type.name),
       };
     }),
